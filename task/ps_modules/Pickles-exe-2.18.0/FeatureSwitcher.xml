@@ -1,0 +1,444 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FeatureSwitcher</name>
+    </assembly>
+    <members>
+        <member name="T:FeatureSwitcher.Configuration.Builder">
+            <summary>
+            Builder for feature configuration.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.IConfigureFeatures">
+            <summary>
+            Extension point for features configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.IConfigureFeatures.And">
+            <summary>
+            Gets the extension point for features configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.IConfigureFeatures.NamedBy">
+            <summary>
+            Gets the extension point for naming configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.IConfigureFeatures.ConfiguredBy">
+            <summary>
+            Gets the extension point for behavior configuration.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.IConfigureNaming">
+            <summary>
+            Extension point for naming configuration.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.IConfigureNaming.Custom(FeatureSwitcher.Feature.NamingConvention[])">
+            <summary>
+            Sets the specified <paramref name="namingConventions"/> into the configuration.
+            </summary>
+            <param name="namingConventions">The naming conventions to use.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.IConfigureBehavior">
+            <summary>
+            Extension point for behavior configuration.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.IConfigureBehavior.Custom(FeatureSwitcher.Feature.Behavior[])">
+            <summary>
+            Sets the specified <paramref name="behaviors"/> into the configuration.
+            </summary>
+            <param name="behaviors">The behaviors to use.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Builder.#ctor(FeatureSwitcher.Feature.Configuration)">
+            <summary>
+            Constructs new builder with specified <paramref name="fallback"/> configuration.
+            </summary>
+            <param name="fallback">The fallback configuration to use.</param>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Builder.Build">
+            <summary>
+            Builds the configuration.
+            </summary>
+            <returns>the configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Builder.Custom(FeatureSwitcher.Feature.NamingConvention[])">
+            <summary>
+            Sets the specified <paramref name="namingConventions"/> into the configuration.
+            </summary>
+            <param name="namingConventions">The naming conventions to use.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Builder.Custom(FeatureSwitcher.Feature.Behavior[])">
+            <summary>
+            Sets the specified <paramref name="behaviors"/> into the configuration.
+            </summary>
+            <param name="behaviors">The behaviors to use.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.Builder.And">
+            <summary>
+            Gets the extension point for features configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.Builder.NamedBy">
+            <summary>
+            Gets the extension point for naming configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.Builder.ConfiguredBy">
+            <summary>
+            Gets the extension point for behavior configuration.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.Features">
+            <summary>
+            Entry point for fluent features configuration.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.AlwaysEnabled(FeatureSwitcher.Configuration.IConfigureFeatures)">
+            <summary>
+            Configures all features as enabled.
+            </summary>
+            <param name="This">The extension point for features configuration.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.AlwaysDisabled(FeatureSwitcher.Configuration.IConfigureFeatures)">
+            <summary>
+            Configures all features as disabled.
+            </summary>
+            <param name="This">The extension point for features configuration.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.TypeFullName(FeatureSwitcher.Configuration.IConfigureNaming)">
+            <summary>
+            Configures all features to be named by full name of the type.
+            </summary>
+            <param name="This">The extension point for naming configuration.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.TypeName(FeatureSwitcher.Configuration.IConfigureNaming)">
+            <summary>
+            Configures all features to be named by name of the type.
+            </summary>
+            <param name="This">The extension point for naming configuration.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.HandledByDefault(FeatureSwitcher.Configuration.IConfigureFeatures)">
+            <summary>
+            Configures all features to be handled by <seealso cref="P:FeatureSwitcher.Feature.Configuration.Default"/>.
+            </summary>
+            <param name="This">The extension point for features configuration.</param>
+            <returns>the extension point for features configuration.</returns>
+        </member>
+        <member name="P:FeatureSwitcher.Configuration.Features.Are">
+            <summary>
+            Gets the extension point for features configuration.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.Features.OfAnyType">
+            <summary>
+            Provides common behaviors and naming conventions for any type.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfAnyType.Enabled(FeatureSwitcher.Feature.Name)">
+            <summary>
+            Enables any feature.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns>always <c>true</c>.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfAnyType.Disabled(FeatureSwitcher.Feature.Name)">
+            <summary>
+            Disables any feature.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns>always <c>false</c>.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfAnyType.NamedByTypeName(System.Type)">
+            <summary>
+            Provides the name of the feature.
+            The value of the name is the name of <paramref name="featureType"/>.
+            </summary>
+            <param name="featureType">The type of the feature.</param>
+            <returns>the name of the feature.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfAnyType.NamedByTypeFullName(System.Type)">
+            <summary>
+            Provides the name of the feature.
+            The value of the name is the full name of <paramref name="featureType"/>.
+            </summary>
+            <param name="featureType">The type of the feature.</param>
+            <returns>the name of the feature.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.Features.OfType`1">
+            <summary>
+            Provides common behaviors and naming conventions for features of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfType`1.Enabled(FeatureSwitcher.Feature.Name)">
+            <summary>
+            Enables the feature only when it's of type <typeparamref name="T"/>.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns><c>true</c> if feature is of type <typeparamref name="T"/>, <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfType`1.Disabled(FeatureSwitcher.Feature.Name)">
+            <summary>
+            Disables the feature only when it's of type <typeparamref name="T"/>.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns><c>false</c> if feature is of type <typeparamref name="T"/>, <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfType`1.NamedByTypeName(System.Type)">
+            <summary>
+            Provides the name of the feature only if it's of type <typeparamref name="T"/>.
+            The value of the name is the name of type <typeparamref name="T"/>.
+            </summary>
+            <param name="featureType">The type of the feature.</param>
+            <returns>the name of the feature if it's of type <typeparamref name="T"/>, <c>null</c> otherwise.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.Features.OfType`1.NamedByTypeFullName(System.Type)">
+            <summary>
+            Provides the name of the feature only if it's of type <typeparamref name="T"/>.
+            The value of the name is the full name of type <typeparamref name="T"/>.
+            </summary>
+            <param name="featureType">The type of the feature.</param>
+            <returns>the name of the feature if it's of type <typeparamref name="T"/>, <c>null</c> otherwise.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature">
+            <summary>
+            Extension methods for a feature instance.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Is``1(``0)">
+            <summary>
+            Provides an object which knows the state of the feature.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+            <param name="This">Instance of the feature.</param>
+            <returns>an object which knows the state of the feature.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Behavior">
+            <summary>
+            Can control whether the feature is enabled or disabled.
+            </summary>
+            <param name="featureName">The name of the feature.</param>
+            <returns><c>true</c> if feature is enabled, <c>false</c> if not, <c>null</c> if the state of the feature can't be determined.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Configuration">
+            <summary>
+            Provides the configuration for feature switches.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Configuration.#ctor(FeatureSwitcher.Feature.NamingConvention,FeatureSwitcher.Feature.Behavior,FeatureSwitcher.Feature.Configuration)">
+            <summary>
+            Constructs a configuration for feature switches.
+            </summary>
+            <param name="namingConvention">The naming convention to use.</param>
+            <param name="behavior">The behavior to use.</param>
+            <param name="fallback">The fallback configuration to use.</param>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Configuration.IsEnabled``1">
+            <summary>
+            Determines whether the <typeparamref name="TFeature"/> is enabled or disabled.
+            </summary>
+            <typeparam name="TFeature">The type of the feature.</typeparam>
+            <returns><c>true</c> if feature is enabled, <c>false</c> if not.</returns>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Configuration.Default">
+            <summary>
+            Gets the default configuration, where all features are named by full name of the type and disabled.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Configuration.Current">
+            <summary>
+            Gets the current configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Configuration.Provider">
+            <summary>
+            Gets and sets the function to use to determine the current configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Configuration.NamingConvention">
+            <summary>
+            Gets the naming convention for this configuration.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Configuration.Behavior">
+            <summary>
+            Gets the behavior for this configuration.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Name">
+            <summary>
+            Represents the name of the feature.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Name.#ctor(System.Type,System.String)">
+            <summary>
+            Constructs new feature name with specified <paramref name="type"/> and <paramref name="value"/>.
+            </summary>
+            <param name="type">The type of the feature.</param>
+            <param name="value">The name determined by the naming convention.</param>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Name.Type">
+            <summary>
+            Gets the type of the feature.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Name.Value">
+            <summary>
+            Gets the name of the feature determined by the naming convention.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.NamingConvention">
+            <summary>
+            Can control the name of the feature.
+            </summary>
+            <param name="featureType">The type of the feature.</param>
+            <returns>the name of the feature, <c>null</c> if the name of the feature can't be determined.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Switch">
+            <summary>
+            Groups switch related functionality.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Switch.For``1">
+            <summary>
+            Provides the switch for features of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+            <returns>the switch for features of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Switch.For``1(System.Type)">
+            <summary>
+            Provides the switch for features of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+            <param name="featureType">The concrete type of the feature.</param>
+            <returns>the switch for features of type <typeparamref name="T"/>.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Switch.StateOf`1">
+            <summary>
+            Provides the state of feature of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Switch.IKnowStateOf`1">
+            <summary>
+            Provides the state of feature of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Switch.IKnowStateOf`1.Enabled">
+            <summary>
+            Gets whether the feature is enabled.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Switch.IKnowStateOf`1.Disabled">
+            <summary>
+            Gets whether the feature is disabled.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Switch.StateOf`1.#ctor(FeatureSwitcher.Feature.Configuration)">
+            <summary>
+            Constructs the state of feature using specified <paramref name="configuration"/>.
+            </summary>
+            <param name="configuration">The configuration to use to determine the state of the feature.</param>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Switch.StateOf`1.Enabled">
+            <summary>
+            Gets whether the feature is enabled.
+            </summary>
+        </member>
+        <member name="P:FeatureSwitcher.Feature.Switch.StateOf`1.Disabled">
+            <summary>
+            Gets whether the feature is disabled.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Switch.IAmFor`1">
+            <summary>
+            Represents the switch for feature of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Switch.IAmFor`1.With(FeatureSwitcher.Feature.Configuration)">
+            <summary>
+            Provides an object which knows the state of the feature using specified <paramref name="configuration"/>.
+            </summary>
+            <param name="configuration">The configuration to use to determine the state of the feature.</param>
+            <returns>an object which knows the state of the feature using specified <paramref name="configuration"/>.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Feature.Switch.Of`1">
+            <summary>
+            Represents the switch for feature of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Feature.Switch.Of`1.With(FeatureSwitcher.Feature.Configuration)">
+            <summary>
+            Provides an object which knows the state of the feature using specified <paramref name="configuration"/>.
+            </summary>
+            <param name="configuration">The configuration to use to determine the state of the feature.</param>
+            <returns>an object which knows the state of the feature using specified <paramref name="configuration"/>.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.IFeature">
+            <summary>
+            Marker interface to identify all available features.
+            </summary>
+        </member>
+        <member name="T:FeatureSwitcher.Feature`1">
+            <summary>
+            Extension methods for features of type <typeparamref name="T"/>.
+            </summary>
+            <typeparam name="T">The type of the feature.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Feature`1.Is">
+            <summary>
+            Provides an object which knows the state of the feature.
+            </summary>
+            <returns>an object which knows the state of the feature.</returns>
+        </member>
+        <member name="T:FeatureSwitcher.Configuration.InMemory">
+            <summary>
+            In memory behavior. 
+            This class allows features to be temporarily turned on or off.
+            </summary>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.InMemory.IsEnabled(FeatureSwitcher.Feature.Name)">
+            <summary>
+            Determines if a feature is enabled by the specified <paramref name="featureName"/>.
+            </summary>
+            <returns>
+                <c>true</c> if the specified featureName enabled;
+                <c>false</c> if the specified featureName is disabled;
+                <c>null</c> otherwise.
+            </returns>
+            <param name="featureName">Feature name.</param>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.InMemory.Enable``1">
+            <summary>
+            Enables a feature of the given type.
+            </summary>
+            <typeparam name="TFeature">The type of the feature to enable.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.InMemory.Disable``1">
+            <summary>
+            Enables a feature of the given type.
+            </summary>
+            <typeparam name="TFeature">The type of the feature to disable.</typeparam>
+        </member>
+        <member name="M:FeatureSwitcher.Configuration.InMemory.Reset``1">
+            <summary>
+            Reset the state of a feature to the default.
+            </summary>
+            <typeparam name="TFeature">The type of the feature to reset.</typeparam>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,31 @@
+{
+  "name": "mmajcica.specflowgen",
+  "version": "0.1.0",
+  "description": "Generates SpecFlow test execution reports in HTML format.",
+  "author": "Mario Majcica",
+  "license": "MIT",
+  "homepage": "https://github.com/mmajcica/SpecFlowReportGeneratorTask#readme",
+  "bugs": {
+    "url": "https://github.com/mmajcica/SpecFlowReportGeneratorTask/issues"
+  },
+  "keywords": [
+    "SpecFlow",
+    "Test",
+    "HTML",
+    "Report",
+    "Reports"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmajcica/SpecFlowReportGeneratorTask.git"
+  },
+  "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.1",
+    "gulp-debug": "^2.1.2",
+    "gulp-util": "^3.0.0",
+    "merge-stream": "^1.0.0",
+    "shelljs": "^0.3.0",
+    "minimist": "1.1.1"
+  }
+}

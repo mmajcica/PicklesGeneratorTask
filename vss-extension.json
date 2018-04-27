@@ -1,0 +1,85 @@
+{
+  "manifestVersion": 1,
+  "extensionId": "PicklesGenerator",
+  "name": "Pickles Generator",
+  "version": "1.0.0",
+  "publisher": "mmajcica",
+  "description": "Generates SpecFlow test execution reports in HTML format.",
+  "public": false,
+  "galleryFlags": [
+    "Public"
+  ],
+  "icons": {
+    "default": "images/logo.png",
+    "large": "images/logo-large.png"
+  },
+  "categories": [
+    "Build and release"
+  ],
+  "tags": [
+    "SpecFlow",
+    "Test",
+    "HTML",
+    "Report",
+    "Reports"
+  ],
+  "links": {
+    "home": {
+      "uri": "http://blog.majcica.com/"
+    },
+    "support": {
+      "uri": ""
+    },
+    "repository": {
+        "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask"
+    },
+    "issues": {
+        "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask/issues"
+    }
+  },
+  "repository": {
+      "type": "git",
+      "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask"
+  },
+  "branding": {
+    "color": "#e9ebed",
+    "theme": "light"
+  },
+  "screenshots": [
+    {
+        "path": "images/screenshot.png"
+    }
+  ],
+  "content": {
+    "details": {
+      "path": "README.md",
+      "license": { "path": "LICENSE.txt" }
+    }
+  },
+  "files": [
+    {
+      "path": "images",
+      "addressable": true
+    },
+    {
+      "path": "task"
+    }
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "contributions": [
+    {
+      "id": "SpecFlowReportGeneratorTask",
+      "type": "ms.vss-distributed-task.task",
+      "targets": [
+        "ms.vss-distributed-task.tasks"
+      ],
+      "properties": {
+        "name": "task"
+      }
+    }
+  ]
+}
