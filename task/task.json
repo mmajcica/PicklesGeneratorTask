@@ -4,7 +4,7 @@
   "friendlyName": "Pickles",
   "description": "Pickles generator",
   "author": "Mario Majcica",
-  "helpMarkDown": "Replace with markdown to show in help",
+  "helpMarkDown": "Generates your Pickles living documentation",
   "category": "Utility",
   "visibility": [
     "Build",

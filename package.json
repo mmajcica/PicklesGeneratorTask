@@ -1,23 +1,23 @@
 {
-  "name": "mmajcica.specflowgen",
+  "name": "mmajcica.picklesgen",
   "version": "0.1.0",
-  "description": "Generates SpecFlow test execution reports in HTML format.",
+  "description": "Generates your Pickles living documentation.",
   "author": "Mario Majcica",
   "license": "MIT",
-  "homepage": "https://github.com/mmajcica/SpecFlowReportGeneratorTask#readme",
+  "homepage": "https://github.com/mmajcica/PicklesGeneratorTask#readme",
   "bugs": {
-    "url": "https://github.com/mmajcica/SpecFlowReportGeneratorTask/issues"
+    "url": "https://github.com/mmajcica/PicklesGeneratorTask/issues"
   },
   "keywords": [
-    "SpecFlow",
+    "Pickles",
     "Test",
-    "HTML",
+    "Living Documentation",
     "Report",
     "Reports"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mmajcica/SpecFlowReportGeneratorTask.git"
+    "url": "git+https://github.com/mmajcica/PicklesGeneratorTask.git"
   },
   "devDependencies": {
     "del": "^2.0.0",

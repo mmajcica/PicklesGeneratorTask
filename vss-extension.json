@@ -4,7 +4,7 @@
   "name": "Pickles Generator",
   "version": "1.0.0",
   "publisher": "mmajcica",
-  "description": "Generates SpecFlow test execution reports in HTML format.",
+  "description": "Generates your Pickles living documentation.",
   "public": false,
   "galleryFlags": [
     "Public"
@@ -17,9 +17,10 @@
     "Build and release"
   ],
   "tags": [
-    "SpecFlow",
+    "Pickles",
     "Test",
-    "HTML",
+    "Testing",    
+    "Living Documentation",
     "Report",
     "Reports"
   ],
@@ -31,15 +32,15 @@
       "uri": ""
     },
     "repository": {
-        "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask"
+        "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
     },
     "issues": {
-        "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask/issues"
+        "uri": "https://github.com/mmajcica/PicklesGeneratorTask/issues"
     }
   },
   "repository": {
       "type": "git",
-      "uri": "https://github.com/mmajcica/SpecFlowReportGeneratorTask"
+      "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
   },
   "branding": {
     "color": "#e9ebed",
@@ -72,7 +73,7 @@
   ],
   "contributions": [
     {
-      "id": "SpecFlowReportGeneratorTask",
+      "id": "PicklesGeneratorTask",
       "type": "ms.vss-distributed-task.task",
       "targets": [
         "ms.vss-distributed-task.tasks"
