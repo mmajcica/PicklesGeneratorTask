@@ -1,12 +1,14 @@
 # Pickles documentation generator
-### Overview
+
+## Overview
+
 This extension will add a Build/Release task in your TFS/VSTS instance that will allow you to generate Pickles documentation. Task ships with the necessary Pickles executable files.
 
-### Requirements
+## Requirements
 
 No specific requirements are present for this task to run.
 
-### The different parameters of the task are explained below:
+## The different parameters of the task are explained below:
 
 * **Feature Directory**: Directory to start scanning recursively for features.
 * **Documentation Format**: Allows the user to select what format the generated output will be written in. E.g. HTML, Word, DHTML, Excel, etc.
@@ -20,7 +22,10 @@ No specific requirements are present for this task to run.
 * **Include Experimental Features**: As of version 2.5, Pickles includes experimental features. The goal of experimental features is to get rapid feedback about ideas. They are subject to change or removal at any time. The experimental features are not always completely thought through - including them and receiving feedback about them enables us to make better decisions about those features. This argument is a flag. Including the argument means that the experimental features should be included. If the argument is not included, then the experimental features will not be included.
 
 ## Release notes
-1.0.0 - Initial Release - Ships with Pickles 2.18.0
+
+* 1.0.2 - Improved markdown file. No changes for the build task
+* 1.0.1 - Minor improvements on the extension. No changes for the build task
+* 1.0.0 - Initial Release - Ships with Pickles 2.18.0
 
 ## Contributing
 
