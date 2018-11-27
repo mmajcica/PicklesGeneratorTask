@@ -57,7 +57,6 @@ try
 
     if($resultsFile)
     {
-        Assert-VstsPath -LiteralPath $resultsFile -PathType Leaf
         $sArgs += "--link-results-file=$resultsFile"
     }
 
