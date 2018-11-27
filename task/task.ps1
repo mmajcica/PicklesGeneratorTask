@@ -18,7 +18,7 @@ try
 
     Assert-VstsPath -LiteralPath $featureDir -PathType Container
 
-    $pickles = "$PSScriptRoot\ps_modules\Pickles-exe-2.18.0\Pickles.exe"
+    $pickles = "$PSScriptRoot\ps_modules\Pickles-exe-2.20.1\Pickles.exe"
 
     if ($out)
     {
