@@ -1014,6 +1014,14 @@
             Gets or sets the component upon which this registration is based.
             </summary>
         </member>
+        <member name="M:Autofac.Builder.StartableManager.StartStartableComponents(Autofac.IComponentContext)">
+            <summary>
+            Executes the startable and auto-activate components in a context.
+            </summary>
+            <param name="componentContext">
+            The <see cref="T:Autofac.IComponentContext"/> in which startables should execute.
+            </param>
+        </member>
         <member name="T:Autofac.ContainerBuilder">
              <summary>
              Used to build an <see cref="T:Autofac.IContainer"/> from component registrations.
@@ -1542,10 +1550,10 @@
             </summary>
             <param name="pi">Constructor, method, or property-mutator parameter.</param>
             <param name="context">The component context in which the value is being provided.</param>
-            <param name="valueProvider">If the result is true, the valueProvider parameter will
-            be set to a function that will lazily retrieve the parameter value. If the result is false,
-            will be set to null.</param>
-            <returns>True if a value can be supplied; otherwise, false.</returns>
+            <param name="valueProvider">If the result is true, the <paramref name="valueProvider" /> parameter will
+            be set to a function that will lazily retrieve the parameter value. If the result is <see langword="false" />,
+            will be set to <see langword="null" />.</param>
+            <returns><see langword="true" /> if a value can be supplied; otherwise, <see langword="false" />.</returns>
             <exception cref="T:System.ArgumentNullException">
             Thrown if <paramref name="pi" /> is <see langword="null" />.
             </exception>
@@ -1567,11 +1575,12 @@
             Selects the best constructor from a set of available constructors.
             </summary>
         </member>
-        <member name="M:Autofac.Core.Activators.Reflection.IConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[])">
+        <member name="M:Autofac.Core.Activators.Reflection.IConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[],System.Collections.Generic.IEnumerable{Autofac.Core.Parameter})">
             <summary>
             Selects the best constructor from the available constructors.
             </summary>
             <param name="constructorBindings">Available constructors.</param>
+            <param name="parameters">Parameters to the instance being resolved.</param>
             <returns>The best constructor.</returns>
         </member>
         <member name="T:Autofac.Core.Activators.Reflection.MatchingSignatureConstructorSelector">
@@ -1585,11 +1594,12 @@
             </summary>
             <param name="signature">Signature to match.</param>
         </member>
-        <member name="M:Autofac.Core.Activators.Reflection.MatchingSignatureConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[])">
+        <member name="M:Autofac.Core.Activators.Reflection.MatchingSignatureConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[],System.Collections.Generic.IEnumerable{Autofac.Core.Parameter})">
             <summary>
             Selects the best constructor from the available constructors.
             </summary>
             <param name="constructorBindings">Available constructors.</param>
+            <param name="parameters">Parameters to the instance being resolved.</param>
             <returns>The best constructor.</returns>
         </member>
         <member name="T:Autofac.Core.Activators.Reflection.MatchingSignatureConstructorSelectorResources">
@@ -1628,11 +1638,12 @@
             Selects the constructor with the most parameters.
             </summary>
         </member>
-        <member name="M:Autofac.Core.Activators.Reflection.MostParametersConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[])">
+        <member name="M:Autofac.Core.Activators.Reflection.MostParametersConstructorSelector.SelectConstructorBinding(Autofac.Core.Activators.Reflection.ConstructorParameterBinding[],System.Collections.Generic.IEnumerable{Autofac.Core.Parameter})">
             <summary>
             Selects the best constructor from the available constructors.
             </summary>
             <param name="constructorBindings">Available constructors.</param>
+            <param name="parameters">Parameters to the instance being resolved.</param>
             <returns>The best constructor.</returns>
             <exception cref='T:Autofac.Core.DependencyResolutionException'>A single unambiguous match could not be chosen.</exception>
         </member>
@@ -1655,6 +1666,64 @@
         <member name="P:Autofac.Core.Activators.Reflection.MostParametersConstructorSelectorResources.UnableToChooseFromMultipleConstructors">
             <summary>
               Looks up a localized string similar to Cannot choose between multiple constructors with equal length {0} on type &apos;{1}&apos;. Select the constructor explicitly, with the UsingConstructor() configuration method, when the component is registered..
+            </summary>
+        </member>
+        <member name="M:Autofac.Core.Activators.Reflection.NoConstructorsFoundException.#ctor(System.Type)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Autofac.Core.Activators.Reflection.NoConstructorsFoundException"/> class.
+            </summary>
+            <param name="offendingType">The <see cref="T:System.Type"/> whose constructor was not found.</param>
+        </member>
+        <member name="M:Autofac.Core.Activators.Reflection.NoConstructorsFoundException.#ctor(System.Type,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Autofac.Core.Activators.Reflection.NoConstructorsFoundException"/> class.
+            </summary>
+            <param name="offendingType">The <see cref="T:System.Type"/> whose constructor was not found.</param>
+            <param name="message">Exception message.</param>
+        </member>
+        <member name="M:Autofac.Core.Activators.Reflection.NoConstructorsFoundException.#ctor(System.Type,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Autofac.Core.Activators.Reflection.NoConstructorsFoundException"/> class.
+            </summary>
+            <param name="offendingType">The <see cref="T:System.Type"/> whose constructor was not found.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="M:Autofac.Core.Activators.Reflection.NoConstructorsFoundException.#ctor(System.Type,System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Autofac.Core.Activators.Reflection.NoConstructorsFoundException"/> class.
+            </summary>
+            <param name="offendingType">The <see cref="T:System.Type"/> whose constructor was not found.</param>
+            <param name="message">Exception message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="P:Autofac.Core.Activators.Reflection.NoConstructorsFoundException.OffendingType">
+            <summary>
+            Gets the type without found constructors.
+            </summary>
+            <value>
+            A <see cref="T:System.Type"/> that was processed by an <see cref="T:Autofac.Core.Activators.Reflection.IConstructorFinder"/>
+            or similar mechanism and was determined to have no available constructors.
+            </value>
+        </member>
+        <member name="T:Autofac.Core.Activators.Reflection.NoConstructorsFoundExceptionResources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Autofac.Core.Activators.Reflection.NoConstructorsFoundExceptionResources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Autofac.Core.Activators.Reflection.NoConstructorsFoundExceptionResources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Autofac.Core.Activators.Reflection.NoConstructorsFoundExceptionResources.Message">
+            <summary>
+              Looks up a localized string similar to No accessible constructors were found for the type &apos;{0}&apos;..
             </summary>
         </member>
         <member name="T:Autofac.Core.Activators.Reflection.ReflectionActivator">
@@ -2617,7 +2686,7 @@
             </summary>
             <param name="tag">The tag applied to the <see cref="T:Autofac.ILifetimeScope"/>.</param>
             <param name="configurationAction">Action on a <see cref="T:Autofac.ContainerBuilder"/>
-            that adds component registations visible only in the new scope.</param>
+            that adds component registrations visible only in the new scope.</param>
             <returns>A new lifetime scope.</returns>
             <example>
             IContainer cr = // ...
@@ -2628,6 +2697,18 @@
                 var foo = lifetime.Resolve&lt;Foo&gt;();
             }
             </example>
+        </member>
+        <member name="M:Autofac.Core.Lifetime.LifetimeScope.CreateScopeRestrictedRegistry(System.Object,System.Action{Autofac.ContainerBuilder})">
+            <summary>
+            Creates and setup the registry for a child scope.
+            </summary>
+            <param name="tag">The tag applied to the <see cref="T:Autofac.ILifetimeScope"/>.</param>
+            <param name="configurationAction">Action on a <see cref="T:Autofac.ContainerBuilder"/>
+            that adds component registrations visible only in the child scope.</param>
+            <returns>Registry to use for a child scope</returns>
+            <remarks>It is the responsibility of the caller to make sure that the registry is properly
+            disposed of. This is generally done by adding the registry to the <see cref="P:Autofac.Core.Lifetime.LifetimeScope.Disposer"/>
+            property of the child scope.</remarks>
         </member>
         <member name="M:Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(Autofac.Core.IComponentRegistration,System.Collections.Generic.IEnumerable{Autofac.Core.Parameter})">
             <summary>
@@ -2744,28 +2825,33 @@
         </member>
         <member name="T:Autofac.Core.Lifetime.LifetimeScopeResources">
             <summary>
-               A strongly-typed resource class, for looking up localized strings, etc.
+              A strongly-typed resource class, for looking up localized strings, etc.
             </summary>
         </member>
         <member name="P:Autofac.Core.Lifetime.LifetimeScopeResources.ResourceManager">
             <summary>
-               Returns the cached ResourceManager instance used by this class.
+              Returns the cached ResourceManager instance used by this class.
             </summary>
         </member>
         <member name="P:Autofac.Core.Lifetime.LifetimeScopeResources.Culture">
             <summary>
-               Overrides the current thread's CurrentUICulture property for all
-               resource lookups using this strongly typed resource class.
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:Autofac.Core.Lifetime.LifetimeScopeResources.DuplicateTagDetected">
+            <summary>
+              Looks up a localized string similar to The tag &apos;{0}&apos; has already been assigned to a parent lifetime scope..
             </summary>
         </member>
         <member name="P:Autofac.Core.Lifetime.LifetimeScopeResources.ScopeIsDisposed">
             <summary>
-               Looks up a localized string similar to Instances cannot be resolved and nested lifetimes cannot be created from this LifetimeScope as it has already been disposed..
+              Looks up a localized string similar to Instances cannot be resolved and nested lifetimes cannot be created from this LifetimeScope as it has already been disposed..
             </summary>
         </member>
         <member name="P:Autofac.Core.Lifetime.LifetimeScopeResources.SelfConstructingDependencyDetected">
             <summary>
-               Looks up a localized string similar to The constructor of type &apos;{0}&apos; attempted to create another instance of itself. This is not permitted because the service is configured to only allowed a single instance per lifetime scope..
+              Looks up a localized string similar to The constructor of type &apos;{0}&apos; attempted to create another instance of itself. This is not permitted because the service is configured to only allowed a single instance per lifetime scope..
             </summary>
         </member>
         <member name="T:Autofac.Core.Lifetime.MatchingScopeLifetime">
@@ -5780,7 +5866,7 @@
         </member>
         <member name="M:Autofac.RegistrationExtensions.RegisterAssemblyTypes(Autofac.ContainerBuilder,System.Reflection.Assembly[])">
             <summary>
-            Register the types in an assembly.
+            Register all types in an assembly.
             </summary>
             <param name="builder">Container builder.</param>
             <param name="assemblies">The assemblies from which to register types.</param>
@@ -7217,6 +7303,21 @@
             Thrown if <paramref name="context" /> is <see langword="null" />.
             </exception>
         </member>
+        <member name="T:Autofac.ScanningFilterExtensions">
+            <summary>
+            Convenience filters for use with assembly scanning registrations.
+            </summary>
+        </member>
+        <member name="M:Autofac.ScanningFilterExtensions.PublicOnly``3(Autofac.Builder.IRegistrationBuilder{``0,``1,``2})">
+            <summary>
+            Filters scanned assembly types to be only the public types.
+            </summary>
+            <typeparam name="TLimit">Registration limit type.</typeparam>
+            <typeparam name="TScanningActivatorData">Activator data type.</typeparam>
+            <typeparam name="TRegistrationStyle">Registration style.</typeparam>
+            <param name="registration">Registration to filter types from.</param>
+            <returns>Registration builder allowing the registration to be configured.</returns>
+        </member>
         <member name="T:Autofac.TypedParameter">
             <summary>
             A parameter that can supply values to sites that exactly
@@ -7789,7 +7890,7 @@
             <param name="separator">The separator.</param>
             <returns>The joined string.</returns>
         </member>
-        <member name="M:Autofac.Util.SequenceExtensions.Append``1(System.Collections.Generic.IEnumerable{``0},``0)">
+        <member name="M:Autofac.Util.SequenceExtensions.AppendItem``1(System.Collections.Generic.IEnumerable{``0},``0)">
             <summary>
             Appends the item to the specified sequence.
             </summary>
