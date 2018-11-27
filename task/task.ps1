@@ -20,16 +20,7 @@ try
 
     $pickles = "$PSScriptRoot\ps_modules\Pickles-exe-2.18.0\Pickles.exe"
 
-    if ($out)
-    {
-        Assert-VstsPath -LiteralPath $out -PathType Container
-
-        if (-not (Test-Path $out -PathType Container))
-        {
-            New-Item -ItemType Directory -Force -Path (Split-Path $out) | Out-Null
-        }
-    }
-    else
+    if (-not $out)
     {
         if ($env:Agent_JobName -eq "Build")
         {
