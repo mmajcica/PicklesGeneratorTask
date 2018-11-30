@@ -48,8 +48,16 @@ try
 
     if($resultsFile)
     {
-        Assert-VstsPath -LiteralPath $resultsFile -PathType Leaf
-        $sArgs += "--link-results-file=$resultsFile"
+        $found = Find-VstsMatch -Pattern $resultsFile
+
+        if(-not $found)
+        {
+            throw "No files found using search pattern '$resultsFile'." 
+        }
+
+        $linkResultsFile = [string]::Join(";", $found)
+
+        $sArgs += "--link-results-file=$linkResultsFile"
     }
 
     if ($resultsFormat)
