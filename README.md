@@ -23,6 +23,7 @@ No specific requirements are present for this task to run.
 
 ## Release notes
 
+* 1.0.3 - Fixed an issues where output dir couldn't be insisting path [#3](https://github.com/mmajcica/PicklesGeneratorTask/issues/3). Pickles binaries upgraded to v2.20.1 [#1](https://github.com/mmajcica/PicklesGeneratorTask/issues/1). Test result file parameter now accepts advanced pattern matching in order to allow for the file search [#2](https://github.com/mmajcica/PicklesGeneratorTask/issues/2)
 * 1.0.2 - Improved markdown file. No changes for the build task
 * 1.0.1 - Minor improvements on the extension. No changes for the build task
 * 1.0.0 - Initial Release - Ships with Pickles 2.18.0

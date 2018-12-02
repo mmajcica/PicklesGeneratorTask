@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "extensionId": "PicklesGenerator",
   "name": "Pickles Generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "publisher": "mmajcica",
   "description": "Generates your Pickles living documentation.",
   "public": false,
@@ -19,7 +19,7 @@
   "tags": [
     "Pickles",
     "Test",
-    "Testing",    
+    "Testing",
     "Living Documentation",
     "Report",
     "Reports"
@@ -32,15 +32,15 @@
       "uri": "http://blog.majcica.com/2018/05/07/living-documentation-and-test-reports-in-vsts-tfs-pipelines/"
     },
     "repository": {
-        "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
+      "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
     },
     "issues": {
-        "uri": "https://github.com/mmajcica/PicklesGeneratorTask/issues"
+      "uri": "https://github.com/mmajcica/PicklesGeneratorTask/issues"
     }
   },
   "repository": {
-      "type": "git",
-      "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
+    "type": "git",
+    "uri": "https://github.com/mmajcica/PicklesGeneratorTask"
   },
   "branding": {
     "color": "#e9ebed",
@@ -48,17 +48,17 @@
   },
   "screenshots": [
     {
-        "path": "images/screenshot.png"
+      "path": "images/screenshot.png"
     }
   ],
   "content": {
     "details": {
-        "path": "README.md"
+      "path": "README.md"
     },
     "license": {
-        "path": "LICENSE.txt"
+      "path": "LICENSE.txt"
     }
-},
+  },
   "files": [
     {
       "path": "images",

@@ -13,7 +13,7 @@
   "demands": [],
   "version": {
     "Major": "1",
-    "Minor": "0",
+    "Minor": "1",
     "Patch": "0"
   },
   "minimumAgentVersion": "1.95.0",
@@ -25,17 +25,17 @@
       "name": "test"
     },
     {
-        "displayName": "Advanced",
-        "isExpanded": false,
-        "name": "advanced"
+      "displayName": "Advanced",
+      "isExpanded": false,
+      "name": "advanced"
     }
   ],
   "inputs": [
-    { 
-      "name": "featureDir", 
-      "type": "filePath", 
+    {
+      "name": "featureDir",
+      "type": "filePath",
       "label": "Feature Directory",
-      "defaultValue": "", 
+      "defaultValue": "",
       "required": true,
       "helpMarkDown": "Directory to start scanning recursively for features."
     },
@@ -46,12 +46,12 @@
       "required": true,
       "defaultValue": "Html",
       "options": {
-          "Html": "HTML",
-          "Word": "Microsoft Word OpenXML (.docx)",
-          "Json": "Javascript Object Notation (JSON)",
-          "Excel": "Microsoft Excel OpenXML (.xlsx)",
-          "DHtml": "HTML with search",
-          "Cucumber": "Cucumber JSON export format"
+        "Html": "HTML",
+        "Word": "Microsoft Word OpenXML (.docx)",
+        "Json": "Javascript Object Notation (JSON)",
+        "Excel": "Microsoft Excel OpenXML (.xlsx)",
+        "DHtml": "HTML with search",
+        "Cucumber": "Cucumber JSON export format"
       },
       "helpMarkDown": "Allows the user to select what format the generated output will be written in."
     },
@@ -105,7 +105,7 @@
         "SpecRun": "SpecRun format",
         "xUnit2": "xUnit 2 format",
         "NUnit3": "NUnit 3 format",
-        "VsTest": "VsTest console format" 
+        "VsTest": "VsTest console format"
       },
       "helpMarkDown": "The format used for the report coming out of the test run of the features. There are many different testing frameworks supported by SpecFlow, plus all of the other gherkin style frameworks out there. NUnit and xUnit output formats are accepted as well as output from MsTest and SpecRun. As of version 2.4, Pickles also supports output from VsTest.Console.exe, the new command line runner introduced by Visual Studio 2012."
     },
